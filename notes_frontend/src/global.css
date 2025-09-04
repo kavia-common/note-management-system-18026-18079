@@ -1,15 +1,45 @@
 /**
  * WHAT IS THIS FILE?
  *
- * Globally applied styles for the ultralight Qwik template.
- * Uses a minimalistic light theme with specified color scheme.
+ * Global theme and base styles for the Qwik notes app (light theme).
+ * Color palette:
+ * - primary: #1976d2
+ * - secondary: #90caf9
+ * - accent: #ffab00
  */
 
 :root {
-  --primary-color: #000000;
-  --secondary-color: #333333;
-  --accent-color: #0078d4;
-  --background-color: #ffffff;
+  /* Theme Colors */
+  --color-primary: #1976d2;
+  --color-primary-600: #1565c0;
+  --color-secondary: #90caf9;
+  --color-accent: #ffab00;
+
+  /* Surface / Text */
+  --surface-0: #ffffff;
+  --surface-1: #fafafa;
+  --surface-2: #f5f7fb;
+  --border: #e0e6f1;
+  --text-0: #0f172a;
+  --text-1: #334155;
+  --muted: #64748b;
+  --shadow: 0 2px 6px rgba(2, 8, 23, 0.06), 0 1px 2px rgba(2, 8, 23, 0.04);
+
+  /* Controls */
+  --radius: 12px;
+  --radius-sm: 10px;
+  --radius-lg: 16px;
+  --focus-ring: 0 0 0 3px rgba(25, 118, 210, 0.18);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
 }
 
 html {
@@ -26,16 +56,39 @@ html {
     Arial,
     "Noto Sans",
     sans-serif;
+  color-scheme: light;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: var(--primary-color);
+  background-color: var(--surface-1);
+  color: var(--text-0);
   line-height: inherit;
 }
 
-* {
-  box-sizing: border-box;
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+input, textarea {
+  font: inherit;
+  color: var(--text-0);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d3dae6;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c0c9da;
 }
